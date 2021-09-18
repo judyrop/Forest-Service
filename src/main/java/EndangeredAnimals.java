@@ -7,4 +7,20 @@ public class EndangeredAnimals extends Wildlife {
         this.health = health;
         this.age = age;
     }
+
+    public int getId() {
+        return id;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getHealth() {
+        return health;
+    }
+
+    public String getAge() {
+        return age;
+    }
 }

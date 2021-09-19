@@ -1,0 +1,30 @@
+{{#partial "content"}}
+<form action="endangeredAnimals"method= "post">
+    <div class="form-control">
+        <label for="name">Name</label>
+        <input id="name" placeholder="Name of endangeredAnimals" name="name" type="text" value="">
+    </div>
+    <div class="form-control">
+
+        <label for="age">Age</label>
+        <select name="age" id="age" class="form-group">
+            <option value="newborn">newborn</option>
+            <option value="young">young</option>
+            <option value="adult">adult</option>
+
+        </select>
+    </div>
+    <div class="form-control">
+        <label for="health">Health</label>
+        <select name="health" id="health" class="form-group">
+            <option value="healthy">healthy</option>
+            <option value="ill">ill</option>
+            <option value="okay">okay</option>
+
+        </select>
+    </div>
+    <button type="submit" class="btn btn primary">Submit</button>
+</form>
+{{/partial}}
+
+{{> layout.hbs}}

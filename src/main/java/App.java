@@ -14,6 +14,10 @@ public class App {
       DaoDb dao = new DaoDb();
         get("/", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "index.hbs");
+        }, new HandlebarsTemplateEngine());
+        get("/animals-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "animals-form.hbs");
         }, new HandlebarsTemplateEngine());
         post("/animals-success", (request,response)->{

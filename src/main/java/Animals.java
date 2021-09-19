@@ -37,4 +37,21 @@ public class Animals extends Wildlife{
             return con.createQuery(sql).executeAndFetch(Animals.class);
         }
     }
+    public static Animals find(int id) {
+        try(Connection con = DB.sql2o.open()) {
+            String sql = "SELECT * FROM animals where id=:id";
+          Animals animal = con.createQuery(sql)
+                    .addParameter("id", id)
+                    .executeAndFetchFirst(Animals.class);
+            return animal;
+        }
+    }
+    public void update(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "UPDATE FROM animals(id,name) VALUES (:id,:name)";
+            con.createQuery(sql)
+                    .addParameter("name",this.name)
+                    .executeUpdate();
+        }
+    }
 }

@@ -5,8 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnimalsTest {
-//    @Rule
-//    public DatabaseRule database = new DatabaseRule();
+     @Rule
+  public DatabaseRule database = new DatabaseRule();
     @Test
    public void animals_instantiatesInstanceofAnimalCorrectly_true() {
         Animals testAnimals = new Animals(1,"lion");
@@ -48,8 +48,19 @@ public class AnimalsTest {
         assertEquals(true,Animals.all().get(0).equals(otherAnimal));
 
     }
+    @Test
+    public void find_returnsAnimalsSameId_otherAnimal() {
+       Animals firstAnimal = new Animals(1, "lion");
+        firstAnimal.save();
+        Animals otherAnimal = new Animals(1, "lion");
+        otherAnimal.save();
+        assertEquals(Animals.find(otherAnimal.getId()), otherAnimal);
+    }
 
     @Test
-    void name() {
+    public void update_updateObjectIntoAnimal() {
+        Animals testAnimals = new Animals(2,"buffalo");
+        testAnimals.save();
+        testAnimals.update(Animals.class);
     }
 }

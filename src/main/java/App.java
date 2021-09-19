@@ -24,7 +24,7 @@ public class App {
             dao.add(animals);
             return new ModelAndView(model,"animals-success.hbs");
         }, new HandlebarsTemplateEngine());
-        get("/", (request, response) -> {
+        get("/EndangeredAnimals-form", (request, response) -> {
             Map<String, Object> model = new HashMap<>();
             return new ModelAndView(model, "EndangeredAnimals-form.hbs");
         }, new HandlebarsTemplateEngine());

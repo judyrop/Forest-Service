@@ -1,6 +1,7 @@
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 public class AnimalsTest {
     @Test
@@ -18,5 +19,19 @@ public class AnimalsTest {
     public void animals_instantiatesWithName_String() {
         Animals testAnimals = new Animals(1,"lion");
         assertEquals("lion",testAnimals.getName());
+    }
+
+    @Test
+    public void animals_returnsTrueIfNameAndEmailAreSame_true() {
+        Animals firstAnimal = new Animals(1,"lion");
+        Animals otherAnimal = new Animals(1,"lion");
+        assertTrue(firstAnimal.equals(otherAnimal));
+    }
+
+    @Test
+    void save_insertsObjectIntoDatabase_Animals() {
+        Animals testAnimals = new Animals(1,"lion");
+        testAnimals.save();
+        assertTrue(Animals.all().get(0).equals(testAnimals));
     }
 }

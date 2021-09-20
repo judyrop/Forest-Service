@@ -1,0 +1,30 @@
+{{#partial "content"}}
+<div class ="view">
+ {{#if endangeredAnimals}}
+                      {{#each endangeredAnimals}}
+                          <p>{{name}}</p>
+                          <hr>
+                      {{/each}}
+
+                      {{else}}
+                          <a href="/endangered/new" class="btn-warning btn-sm">New animal</a>
+
+                      {{/if}}
+
+                      </div>
+             <div class ="view">
+             {{#if animals}}
+                    {{#each animals}}
+                      <p>{{name}}</p>
+                        <hr>
+                       {{/each}}
+
+
+                       {{else}}
+                       <a href="/animals/new" class="btn-warning btn-sm">New Non-endangered animal</a>
+
+                        {{/if}}
+</div>
+{{/partial}}
+
+{{> layout.hbs}}

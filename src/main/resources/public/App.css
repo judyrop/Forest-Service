@@ -8,7 +8,7 @@ body{
 h1{
     /*font-style: italic;*/
 }
-form-control{
+container{
     background-position: center;
     padding: 3px;
 }

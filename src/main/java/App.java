@@ -40,6 +40,18 @@ public class App {
             dao.add(animals);
             return new ModelAndView(model,"EndangeredAnimals-success.hbs");
         }, new HandlebarsTemplateEngine());
+        get("/Sighting-form", (request, response) -> {
+            Map<String, Object> model = new HashMap<>();
+            return new ModelAndView(model, "sighting-form.hbs");
+        }, new HandlebarsTemplateEngine());
+        post("/sighting-success", (request,response)->{
+            Map<String, Object> model= new HashMap<>();
+            String name = request.queryParams("name");
+            model.put("name",name);
+            Animals animals = new Animals(name);
+            dao.add(animals);
+            return new ModelAndView(model,"sighting-success.hbs");
+        }, new HandlebarsTemplateEngine());
     }
 }
 

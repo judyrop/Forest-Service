@@ -51,8 +51,8 @@ public class App {
             Animals animals = new Animals(name);
             dao.add(animals);
             return new ModelAndView(model,"sighting-success.hbs");
+            }, new HandlebarsTemplateEngine());
 
-        }, new HandlebarsTemplateEngine());
     }
 }
 

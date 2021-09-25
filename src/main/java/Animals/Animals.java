@@ -11,6 +11,9 @@ public class Animals extends Wildlife {
     public String getName() {
         return name;
     }
+    public void setId(int id){
+        this.id =id;
+    }
 //    @Override
 //    public boolean equals(Object otherAnimals){
 //        if(!(otherAnimals instanceof Animals)){

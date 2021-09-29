@@ -1,0 +1,18 @@
+  {{#partial "content"}}
+  <div class = "container">
+  <div class ="view">
+Endangered Animals List:
+
+   {{#each allEndangeredAnimals}}
+          <p>{{name}}</p>
+          <p>{{health}}</p>
+          <p>{{age}}</p>
+          <p>{{rangerName}}</p>
+          <p>{{location}}</p>
+          <hr>
+   {{/each}}
+</div>
+
+{{/partial}}
+</div>
+{{> layout.hbs}}

@@ -29,7 +29,7 @@ public class DaoDb implements Dao {
     @Override
     public List<Animals> getAll() {
         try(Connection con = sql2o.open()){
-            return con.createQuery("SELECT * FROM animals") //raw sql
+            return con.createQuery("SELECT * FROM animals")
                     .executeAndFetch(Animals.class); //fetch a list
         }
     }

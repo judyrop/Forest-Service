@@ -1,8 +1,15 @@
 package Animals;
 
+import java.util.ArrayList;
+
 public class Animals extends Wildlife {
-    public Animals(String name){
+    private static ArrayList<Animals> instances = new ArrayList<>();
+    public Animals(String name,String location,String rangerName){
+
         this.name = name;
+        this.location = location;
+        this.rangerName = rangerName;
+        this.instances.add(this);
     }
     public int getId() {
         return id;
@@ -11,8 +18,17 @@ public class Animals extends Wildlife {
     public String getName() {
         return name;
     }
+    public String getLocation(){
+        return location;
+    }
+    public String getRangerName(){
+        return rangerName;
+    }
     public void setId(int id){
         this.id =id;
+    }
+    public static ArrayList<Animals> getAll(){
+        return instances;
     }
 //    @Override
 //    public boolean equals(Object otherAnimals){

@@ -1,32 +1,53 @@
-//import org.junit.jupiter.api.Test;
-//
-//import static org.junit.jupiter.api.Assertions.*;
-//
-//public class EndangeredAnimalsTest {
+import Animals.EndangeredAnimals;
+import org.junit.jupiter.api.Test;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+
+public class EndangeredAnimalsTest {
+    @Test
+    public void endangered_instantiatesCorrectly_true(){
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals(true, testEndangered instanceof EndangeredAnimals);
+    }
+
+    @Test
+    public void endangered_instantiatesWithName_elephant(){
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals("elephant", testEndangered.getName());
+    }
+
 //    @Test
-//    public void endangeredAnimals_instantiatesInstanceofEndangeredAnimalCorrectly_true() {
-//        EndangeredAnimals testEndangeredAnimals = new EndangeredAnimals("lion","healthy","young");
-//        assertEquals(true,testEndangeredAnimals instanceof EndangeredAnimals);
+//    public void endangered_instantiatesWithId_5(){
+//        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+//        assertEquals(5, testEndangered.setId(5));
 //    }
-//
-//    @Test
-//    public void endangeredAnimals_instantiatesWithId_int() {
-//        EndangeredAnimals testEndangeredAnimals = new EndangeredAnimals("lion","healthy","young");
-//        assertEquals(1,testEndangeredAnimals.getId());
-//    }
-//    @Test
-//    public void endangeredAnimals_instantiatesWithName_String() {
-//        EndangeredAnimals testEndangeredAnimals = new EndangeredAnimals("lion","healthy","young");
-//        assertEquals("lion",testEndangeredAnimals.getName());
-//    }
-//    @Test
-//    public void endangeredAnimals_instantiatesWithHealth_String() {
-//        EndangeredAnimals testEndangeredAnimals = new EndangeredAnimals("lion","healthy","young");
-//        assertEquals("healthy",testEndangeredAnimals.getHealth());
-//    }
-//    @Test
-//    public void endangeredAnimals_instantiatesWithAge_String() {
-//        EndangeredAnimals testEndangeredAnimals = new EndangeredAnimals("lion","healthy","young");
-//        assertEquals("young",testEndangeredAnimals.getAge());
-//    }
-//}
+
+    @Test
+    public void endangered_instantiatesWithHealth_healthy(){
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals("healthy", testEndangered.getHealth());
+    }
+
+    @Test
+    public void endangered_instantiatesWithAge_young(){
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals("young", testEndangered.getAge());
+    }
+
+    @Test
+    public void endangeredAnimals_instantiatesWithRanger_ranger() throws Exception{
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals("John", testEndangered.getRangerName());
+    }
+
+    @Test
+    public void endangeredAnimals_instantiatesWithCorrectLocation() throws Exception{
+        EndangeredAnimals testEndangered = setupEndangeredAnimals();
+        assertEquals("zone A", testEndangered.getLocation());
+    }
+
+    // helper methods
+    public EndangeredAnimals setupEndangeredAnimals(){
+        return new EndangeredAnimals("white rhino", "healthy", "young", "John","zone A");
+    }
+}

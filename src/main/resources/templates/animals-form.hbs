@@ -1,16 +1,34 @@
 {{#partial "content"}}
 <div class="container">
 <form action="/animals-success"method= "post">
-<div class="form-control">
-        <label for="id">Animal-Id</label>
-        <input id="id" placeholder="Animal-Id" name="animal-Id" type="number" value="">
-    </div>
+{{!-- <div class="form-control"> --}}
+{{!--         <label for="id">Animal-Id</label> --}}
+{{!--         <input id="id" placeholder="Animal-Id" name="animal-Id" type="number" value=""> --}}
+{{!--     </div> --}}
     <div class="form-control">
         <label for="name">Name</label>
         <input id="name" placeholder="Name of non-endangeredAnimals" name="name" type="text" value="">
     </div>
-
-
+    <div class="form-group">
+                    <label for="location">Location</label>
+                  <select name="location" id="Location" class="form-group">
+                       <option value="newborn">Zone A</option>
+                      <option value="young">Near the River</option>
+                     <option value="adult">NE Quadrant</option>
+                     <option value="adult">SE Quadrant</option>
+                     <option value="adult">Jungle A</option>
+                 </select>
+                </div>
+                <div class="form-group">
+                    <label for="rangerName">Ranger Name</label>
+                    <select name="location" id="Location" class="form-group">
+                         <option value="rangerName">James Bill</option>
+                         <option value="rangerName">Juanita Lions</option>
+                          <option value="rangerName">Heavi  Kins</option>
+                           <option value="rangerName">Joels  Tori</option>
+                          <option value="rangerName">Barack Zera</option>
+                    </select>
+                </div>
     <button type="submit" class="btn btn success">Submit</button>
 
     <br>
